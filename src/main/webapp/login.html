@@ -3,16 +3,131 @@
 <head>
 <meta charset="UTF-8">
 <title>Login Page</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('https://t3.ftcdn.net/jpg/09/61/27/48/360_F_961274808_fX06eKzHJDCX9LO1Uew8YsL8Gk7RDZBu.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start; /* Aligns to the top */
+    padding: 50px;
+}
+
+/* Back Link */
+.back-link {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1f92de;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.back-link:hover {
+    color: white;
+    background-color: #1f92de;
+    box-shadow: 0px 4px 10px rgba(31, 146, 222, 0.6);
+}
+
+/* Login Box */
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-left: 50px; /* Moves form to the left */
+    margin-top:60px;
+}
+
+h2 {
+    color: #008ae6;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* Login Form */
+.login-form {
+    width: 100%;
+    text-align: left;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 15px;
+    border: 1px solid #007acc;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Button */
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.login-button:hover {
+    background: #e68900;
+    box-shadow: 0px 4px 10px rgba(255, 152, 0, 0.6);
+}
+
+/* Input focus effect */
+input:focus {
+    border: 2px solid #ff9800;
+    box-shadow: 0px 0px 10px rgba(255, 152, 0, 0.7);
+    outline: none;
+}
+
+/* Responsive Fixes */
+@media screen and (max-width: 480px) {
+    .container {
+        width: 90%;
+        margin-left: 20px;
+    }
+}
+</style>
 </head>
 <body>
-<h1>Please login</h1>
-<form action="UserLogin">
-<pre>
-Enter Email Id :<input type="email" name="email">
-Enter Password :<input type="password" name="password">
-<input type="submit" name="submit" value="submit">
-</pre>
-</form>
+
+<!-- Back Link -->
+<a href="index.html" class="back-link">← Back to Home</a>
+<a href="dashboard.jsp">Dashboard Page</a>
+
+<div class="container">
+    <h2>Please Login To Continue...</h2>
+
+    <div class="login-form">
+        <form action="LoginServlet" method="get">
+            <input type="email" name="email" placeholder="Enter Your Email" required>
+            <input type="password" name="password" placeholder="Enter Your Password" required>
+            <button class="login-button" type="submit">Login</button>
+        </form>
+    </div>
+</div>
 
 </body>
 </html>
