@@ -3,123 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Registration Page</title>
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background: url('https://img.freepik.com/free-vector/digital-rupee-technology-background-design_1017-36659.jpg?t=st=1741806145~exp=1741809745~hmac=8df89cf6b89bfbb9a264c1cebb85f979209f71b24169b0ec3303aefed045e223&w=1800') no-repeat center center fixed;
-    background-size: cover; 
-    height: 100vh;
-    display: flex;
-    align-items: flex-start; /* Align content to the top */
-    padding: 50px;
-}
-
-.container {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    margin-left: 50px; /* Moves the form to the left */
-    margin-top:60px;
-}
-
-h1 {
-    color: #008ae6;
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.register-form {
-    width: 100%;
-    text-align: left;
-}
-
-/* Input fields */
-input {
-    width: 100%;
-    margin-bottom: 10px;
-    border: 1px solid #007acc;
-    border-radius: 5px;
-    padding: 12px;
-    font-size: 16px;
-    background-color: rgba(255, 255, 255, 0.9);
-}
-
-/* Button */
-.register-button {
-    width: 100%;
-    padding: 12px;
-    background: #ff9800;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: all 0.3s ease-in-out;
-}
-
-.register-button:hover {
-    background: #e68900;
-    box-shadow: 0px 4px 10px rgba(255, 152, 0, 0.6);
-}
-
-/* Back link */
-.back-link {
-    position: absolute;
-    top: 20px; 
-    left: 20px; 
-    font-size: 16px;
-    font-weight: bold;
-    color: #1f92de;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-}
-
-.back-link:hover {
-    color: white;
-    background-color: #1f92de;
-    padding: 5px;
-    border-radius: 5px;
-    box-shadow: 0px 4px 10px rgba(31, 146, 222, 0.6);
-}
-
-/* Responsive Fixes */
-@media screen and (max-width: 480px) {
-    .container {
-        width: 90%;
-        margin-left: 20px; /* Keep left alignment in small screens */
-    }
-}
-</style>
 </head>
 <body>
-
-<a class="back-link" href="index.html">← Back to Home</a>  
-
-<div class="container">
-    <h1>Hello User, Please Fill The Form To <span style="color: #006bb3;">Sign Up!</span></h1>
-
-    <div class="register-form">
-        <form action="" method="post">
-            <input type="text" name="fullname" placeholder="Full Name" required>
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
-            <input type="text" name="phone" placeholder="Phone Number">
-            <button class="register-button" type="submit">Register</button>
-        </form>
-    </div>
-</div>
-
+<form action="UserRegister" method="post">
+<pre>
+Enter Name         :<input type="text" name="name">
+Enter Email Id     :<input type="email" name="email">
+Enter Password     :<input type="password" name="password">
+Enter Phone Number :<input type="text" name="mobile">
+Enter Gender :
+<label for="male">Male</label><input type="radio" name="gender" value="male" id="male"  ><br>
+<label for="female">Female</label><input type="radio" id="female" name="gender" value="female"><br>
+                   <input type="submit" name="submit" value="Submit">
+</pre>
+</form>
 </body>
 </html>
