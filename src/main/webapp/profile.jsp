@@ -98,6 +98,7 @@
 </head>
 <body>
 
+
 <%
     UsersDto loggedUser = (UsersDto) session.getAttribute("loggedUser");
 if (loggedUser == null) {
@@ -108,7 +109,6 @@ if (loggedUser == null) {
 
     if (loggedUser != null) {
 %>
-<button class="dashboard-btn" onclick="window.location.href='dashboard.jsp'">Dashboard</button>
 <button class="logout-btn" onclick="window.location.href='LogoutServlet'">Logout</button>
     <div class="profile-container">
         <h2>User Profile</h2>

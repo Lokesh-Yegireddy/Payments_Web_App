@@ -288,7 +288,7 @@
             Welcome, <span id="username">Lokesh Yegireddy</span>! 🎉
         </div>
         <div>
-            <a href="logout.jsp" class="logout">Logout</a>
+            <a href="LogoutServlet" class="logout">Logout</a>
         </div>
     </nav>
 </div>

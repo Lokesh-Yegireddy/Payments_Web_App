@@ -11,6 +11,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
+import com.paymentApp.Dao.RegistrationDao;
 import com.paymentApp.db.DbConnection;
 import com.paymentApp.dto.UsersDto;
 
@@ -38,20 +39,9 @@ public class RegistrationServlet extends HttpServlet {
 	   String email=(String)request.getParameter("email");
 	   String address=request.getParameter("address");
 	   UsersDto user=new UsersDto(userName,password,firstName,lastName,phoneNumber,email, address);
-	   
-	   
-	   try {
-		   Connection con=DbConnection.DbConnect();
-		   String query="insert into  user_details (User_Name, Password, First_Name, Last_Name, Phone_Number, Email, Address) values(?,?,?,?,?,?,?)";
-		   PreparedStatement psmt=con.prepareStatement(query);
-		   psmt.setString(1,user.getUserName());
-		   psmt.setString(2,user.getPassword());
-		   psmt.setString(3,user.getFirstName());
-		   psmt.setString(4,user.getLastName());
-		   psmt.setString(5,user.getPhoneNumber());
-		   psmt.setString(6,user.getEmail());
-		   psmt.setString(7,user.getAddress());
-		   int res=psmt.executeUpdate();
+	   RegistrationDao rd=new RegistrationDao();
+	    int res=rd.registerUser(user);
+	 
 		   if(res>0)
 		   {
 			   pw.print("<script>alert('Registration successfull...!Please Continue Login...');window.location='index.html';</script>");
@@ -62,10 +52,6 @@ public class RegistrationServlet extends HttpServlet {
 		   }
 		   
 		   
-	   }catch(Exception e)
-	   {
-		   e.printStackTrace();
-	   }
 	   
 	}
 

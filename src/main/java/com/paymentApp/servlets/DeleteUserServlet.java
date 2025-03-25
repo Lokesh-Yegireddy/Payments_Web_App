@@ -46,7 +46,7 @@ public class DeleteUserServlet extends HttpServlet {
         String sql = "DELETE FROM User_Details WHERE user_id = ?";
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, userId);
-            int rowsDeleted = stmt.executeUpdate();x
+            int rowsDeleted = stmt.executeUpdate();
 
             if (rowsDeleted > 0) {
             	 // Invalidate session after delete
